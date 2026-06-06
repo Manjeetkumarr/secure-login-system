@@ -1,0 +1,6 @@
+flask 
+flask_sqlalchemy 
+pymysql 
+bcrypt
+sqlalchemy
+greenlet
