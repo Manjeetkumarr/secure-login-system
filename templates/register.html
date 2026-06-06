@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="logo">
+            <h1>🛡 Secure Register</h1>
+            <p>Create Your Account</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+
+            <div class="input-group">
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Choose Username"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create Password"
+                    required>
+            </div>
+
+            <div class="show-password">
+                <input type="checkbox"
+                       onclick="togglePassword()">
+                Show Password
+            </div>
+
+            <button class="btn" type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <div class="bottom-text">
+            Already have an account?
+            <a href="/login">Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function togglePassword() {
+
+    var x = document.getElementById("password");
+
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>
+
+</body>
+</html>

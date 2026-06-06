@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card dashboard-card">
+
+        <h1>
+            Welcome, {{ username }}
+        </h1>
+
+        <p>
+            You are successfully authenticated.
+        </p>
+
+        <a href="/logout"
+           class="logout-btn">
+           Logout
+        </a>
+
+        <div class="security-box">
+
+            <h3>Project Features</h3>
+
+            <ul>
+                <li>MariaDB Database</li>
+                <li>Password Hashing (bcrypt)</li>
+                <li>Session Management</li>
+                <li>Flash Messages</li>
+                <li>SQL Injection Protection</li>
+                <li>Password Validation</li>
+                <li>Login History Tracking</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
